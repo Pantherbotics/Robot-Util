@@ -1,11 +1,12 @@
-# FRC-2018-PowerUp
-FRC Team 3863's robot code for the 2018 game, FIRST Power Up!
+# Robot-Util
 
+Tools we use to help with robot programming.
 Our code features:
- - Elevator motion profiling
- - Closed-loop driving
+ - Ramsete control algorithm based path tracker
  - Constant-radius turning
+ - Field-relative positioning through nonlinear state estimation.
  - Automated autonomous path loading from disk
+ - Vision integration with the JeVois Smart Camera
 
 
 ## External Dependencies:
