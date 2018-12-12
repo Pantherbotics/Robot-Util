@@ -7,7 +7,9 @@
 
 package frc.team3863.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import frc.team3863.robot.subsystems.Vision;
 import jaci.pathfinder.Pathfinder;
 import jaci.pathfinder.Trajectory;
 
@@ -26,6 +28,8 @@ import java.util.HashMap;
  */
 public class Robot extends TimedRobot {
     public static HashMap<String, Trajectory> paths;
+    public static final Vision vision = new Vision(Constants.kVisionBaud, Constants.kVisionPort);
+
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,10 +40,15 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
+    
         paths = collectPathsFromDirectory(Constants.PATH_LOCATION);
-
+    
     }
 
+     @Override
+    public void robotPeriodic() {
+       
+    }
     /**
      * This function is called once each time the robot enters Disabled mode.
      * You can use it to reset any subsystem information you want to clear when
